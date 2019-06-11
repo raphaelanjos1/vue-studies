@@ -1,18 +1,24 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <di id="app">
-  <p>{{ title }}</p>
+  <p v-once>{{ title }}</p>
   <p>{{ salute() }}</p>
+  <a v-bind:href="link">Google</a>
+  <hr>
+  <p v-html="linkHtml"></p>
 </di>
 
 <script>
   new Vue({
     el: '#app',
     data: {
-      title: 'Usando VueJS'
+      title: 'Usando VueJS',
+      link: 'https://google.com.br',
+      linkHtml: '<a href="https://google.com">Google</a>'
     },
     methods: {
       salute() {
+        this.titulo = 'bom dia!'
         return this.title
       }
     }
