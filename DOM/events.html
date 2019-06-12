@@ -1,0 +1,27 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+  <p>{{ counter }}</p>
+  <button v-on:click="addStep(5)">Sum 1</button>
+  <p v-on:mousemove='updateXY'>Mouse: {{ x }} e {{ y }}</p>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data: {
+      counter: 0,
+      x: 0,
+      y: 0
+    },
+    methods: {
+      addStep(step) {
+        this.counter += step
+      },
+      updateXY(e) {
+        this.x = e.clientX
+        this.y = e.clientY
+      }
+    }
+  })
+</script>
