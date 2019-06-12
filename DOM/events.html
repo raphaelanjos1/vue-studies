@@ -3,7 +3,11 @@
 <div id="app">
   <p>{{ counter }}</p>
   <button v-on:click="addStep(5)">Sum 1</button>
-  <p v-on:mousemove='updateXY'>Mouse: {{ x }} e {{ y }}</p>
+  <p v-on:mousemove='updateXY'>
+    Mouse: {{ x }} e {{ y }}
+    <span v-on:mousemove.stop>STOP PROPAGATION</span>
+  </p>
+  <a href="http://google.com" v-on:click.prevent=''>Google</a>
 </div>
 
 <script>
@@ -21,7 +25,10 @@
       updateXY(e) {
         this.x = e.clientX
         this.y = e.clientY
-      }
+      },
+      // stopEvent(e) {
+      //   e.stopPropagation()
+      // }
     }
   })
 </script>
