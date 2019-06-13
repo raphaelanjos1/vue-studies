@@ -8,6 +8,7 @@
     <span v-on:mousemove.stop>STOP PROPAGATION</span>
   </p>
   <a href="http://google.com" v-on:click.prevent=''>Google</a>
+  <input type="text" v-on:keyup.enter='showAlert'>
 </div>
 
 <script>
@@ -29,6 +30,9 @@
       // stopEvent(e) {
       //   e.stopPropagation()
       // }
+      showAlert(e) {
+        alert('Alert')
+      }
     }
   })
 </script>
