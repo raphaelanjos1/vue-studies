@@ -13,6 +13,14 @@
     <h1>{{ cor }}</h1>
     <p>{{index}}</p>
   </template>
+  <hr>
+  <ul>
+    <li v-for='pessoa in pessoas'>
+      <div v-for='(valor, chave) in pessoa'>
+        {{ chave }} = {{ valor }}
+      </div>
+    </li>
+  </ul>
 </div>
 
 <script>
