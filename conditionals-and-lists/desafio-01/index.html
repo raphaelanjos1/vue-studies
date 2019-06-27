@@ -1,4 +1,30 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
+<div id="desafio">
+  <h2>#01</h2>
+  <div>
+    <button @click='alternar'>Alternar</button>
+    <p v-if='alternarParagrafo'>Você quer me ver...</p>
+    <p v-else>...ou eu</p>
+    <p v-show='alternarParagrafo'>Você quer me ver...</p>
+    <p v-show='!alternarParagrafo'>...ou eu</p>
+  </div>
+
+  <h2>#02</h2>
+  <ul>
+    <li v-for='(brand, index) in brands' :key='index'>
+      {{ index }} - {{ brand }}
+    </li>
+  </ul>
+
+  <h2>#03</h2>
+  <ul>
+    <li v-for='(valor, campo) in livro'>
+      {{ campo }}: {{ valor }}
+    </li>
+  </ul>
+
+</div>
+
 <script src="./index.js"></script>
