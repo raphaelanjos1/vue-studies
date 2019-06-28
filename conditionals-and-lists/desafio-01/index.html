@@ -25,6 +25,18 @@
     </li>
   </ul>
 
+  <h2>#04</h2>
+  <ul>
+    <li v-for='valor in aluno'>
+      <template v-if="!Array.isArray(valor)">{{ valor }}</template>
+      <template v-else> Notas:
+        <ul>
+          <li v-for='nota in valor'>{{ nota }}</li>
+        </ul>
+      </template>
+    </li>
+  </ul>
+
 </div>
 
 <script src="./index.js"></script>
